@@ -1,0 +1,340 @@
+@use '@/styles/utilities/colors';
+@use '@/styles/utilities/fonts';
+@import '@/styles/utilities/mixins';
+
+.dark {
+    background: colors.$dark-blue;
+}
+
+.light {
+    background: colors.$white;
+}
+
+  .materialIcon {
+    position: relative;
+    top: 4px;
+    z-index: 1;
+    font-size: 24px;
+    color: white;
+  }
+  .count {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    z-index: 2;
+    font-size: 11px;
+    border-radius: 50%;
+    background: #6328e5d6;
+    width: 16px;
+    height: 16px;
+    line-height:16px;
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+
+
+.nav {
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    align-items: center;
+    position: relative;
+    height: 66px;
+    border-bottom: 1px solid colors.$violet;
+}
+
+.mobile_nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(10, 199, 212, 0.2);
+
+    li {
+        width: 1rem;
+    }
+}
+
+.logo {
+    width: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.links {
+    display: none;
+    position: relative;
+    height: 100%;
+
+    li {
+        height: 100%;
+        display: grid;
+        place-content: center;
+    }
+
+    li a {
+        color: colors.$light-green;
+        font-family: fonts.$primary-font;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+.links_open.dark {
+    background: colors.$dark-blue;
+}
+
+.links_open.light {
+    background: colors.$white;
+}
+
+.links_open {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-bottom-right-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    font-weight: 300;
+    margin-top: 80px;
+    justify-content: space-around;
+    font-size: 10px;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        svg {
+            fill: colors.$light-green;
+            stroke-width: 0.85px;
+            stroke: colors.$light-green;
+            fill-opacity: 0.65;
+            stroke-opacity: 0.65;
+        }
+
+        a {
+            color: colors.$light-green;
+            font-family: fonts.$primary-font;
+            font-weight: 700;
+        }
+    }
+}
+
+.menus {
+    margin-right: 1rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+
+    li {
+        width: 1.15rem;
+        cursor: pointer;
+        position: relative;
+    }
+
+    li.hidden {
+        display: none;
+    }
+}
+
+.toggle_theme {
+    width: 38px;
+    height: 20px;
+    border-radius: 99px;
+    border: 2px solid colors.$light-green;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    div.dark {
+        background: colors.$dark-grey;
+    }
+
+    div.light {
+        background: rgba(245, 245, 245);
+
+        .circle {
+            transform: translate(130%, -50%);
+        }
+
+        span:last-child {
+            transform: translate(-150%, -50%);
+        }
+    }
+
+    div {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        span:last-child {
+            position: absolute !important;
+            width: 12px !important;
+            height: 12px !important;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1px;
+            transition: transform 0.35s ease;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 1px;
+            transform: translateY(-50%);
+            border-radius: 99px;
+            width: 14px;
+            height: 14px;
+            background: colors.$white;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            transition: transform 0.35s ease;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+}
+
+.active {
+    border-bottom: 3px solid colors.$light-green;
+}
+
+// ----- TABLET -----//
+@include for-tablet {
+    .burger {
+        display: none !important;
+    }
+    .nav {
+        height: 70px;
+        border-bottom: none;
+    }
+
+    .logo {
+        position: relative;
+        transform: none;
+        top: 0;
+        left: 0;
+        width: 150px;
+    }
+
+    .links {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .links_open {
+        display: none;
+    }
+
+    .menus {
+        gap: 0.8rem;
+
+        li.hidden {
+            display: block;
+        }
+    }
+}
+
+// ----- LAPTOP SMALL -----//
+@include for-laptop-sm {
+    .logo {
+        width: 185px;
+    }
+    .links {
+        gap: 4.5rem;
+
+        li a {
+            font-size: 1.2rem;
+        }
+
+        .links_open{
+            display: none;
+        }
+    }
+    .menus {
+        gap: 1rem;
+        margin-right: 2rem;
+
+        li {
+            width: 1.25rem;
+        }
+    }
+
+    .toggle_theme {
+        width: 47.5px;
+        height: 25px;
+        border: 3px solid colors.$light-green;
+
+        div.light {
+            .circle {
+                transform: translate(130%, -50%);
+            }
+
+            span:last-child {
+                transform: translate(-150%, -50%);
+            }
+        }
+
+        div {
+            span:last-child {
+                width: 14px !important;
+                height: 14px !important;
+                right: 2px;
+            }
+
+            .circle {
+                left: 2px;
+                width: 17px;
+                height: 17px;
+                transition: transform 0.35s ease;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+// ----- LAPTOP LARGE -----//
+@include for-desktop-md {
+    .logo {
+        width: 200px;
+    }
+    .links_open{
+        display: none;
+    }
+
+    .links {
+        gap: 5.5rem;
+        font-size: 1.4rem;
+
+        li a {
+            font-size: 1.25rem;
+        }
+    }
+
+    .menus {
+        gap: 1.35rem;
+
+        li {
+            width: 1.4rem;
+        }
+    }
+}
+
+@include for-desktop-md {
+
+    .links_open{
+        display: none;
+    }
+}

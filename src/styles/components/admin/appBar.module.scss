@@ -1,0 +1,54 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.container {
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+
+    .nav {
+        .profile {
+            color: colors.$grey;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .burger {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+
+        @include for-laptop-sm {
+            display: none;
+        }
+
+        .line {
+            height: 2px;
+            background-color: colors.$very-dark-violet;
+            transition: 0.25s;
+        }
+
+        :nth-child(1) {
+            width: 75%;
+        }
+        :nth-child(2) {
+            width: 100%;
+        }
+        :nth-child(3) {
+            width: 50%;
+        }
+
+        &:hover {
+            .line {
+                width: 100%;
+            }
+        }
+    }
+}

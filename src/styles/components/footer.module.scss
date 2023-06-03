@@ -1,0 +1,108 @@
+@use '@/styles/utilities/colors';
+@use '@/styles/utilities/fonts';
+@import '@/styles/utilities/mixins';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+
+    @include for-tablet {
+        gap: 2.2rem;
+    }
+
+    @include for-laptop-sm {
+        gap: 2.5rem;
+    }
+}
+
+.dark {
+    background: colors.$dark-grey;
+}
+
+.light {
+    background: colors.$white;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-evenly;
+    font-weight: 600;
+    font-family: fonts.$primary-font;
+
+    li:nth-child(5),
+    li:nth-child(6),
+    li:nth-child(7) {
+        display: none;
+    }
+
+    a.grey {
+        color: colors.$light-grey !important;
+    }
+
+    a.green {
+        color: colors.$light-green !important;
+    }
+
+    @include for-tablet {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2.7rem;
+        height: auto;
+    }
+
+    @include for-laptop-sm {
+        gap: 4rem;
+    }
+
+    @include for-desktop-md {
+        gap: 6rem;
+        font-size: 1.35rem;
+    }
+}
+
+.socmed {
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+
+    @include for-tablet {
+        width: 100px;
+    }
+
+    @include for-desktop-md {
+        width: 130px;
+    }
+}
+
+.icon {
+    width: 80px;
+    @include for-tablet {
+        width: 100px;
+    }
+
+    @include for-desktop-md {
+        width: 130px;
+    }
+}
+
+.logo {
+    width: 120px;
+
+    @include for-tablet {
+        width: 150px;
+    }
+
+    @include for-laptop-sm {
+        width: 175px;
+    }
+    @include for-desktop-md {
+        width: 200px;
+    }
+}

@@ -1,0 +1,1218 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.section.light {
+    .profile {
+        .profile_header {
+            .title {
+                color: colors.$light-green;
+            }
+
+            span {
+                color: colors.$violet;
+            }
+        }
+
+        .account_details {
+            .detail_text {
+                span.sub_title {
+                    color: colors.$violet;
+                }
+
+                span:not(.sub_title) {
+                    color: colors.$light-green;
+                }
+            }
+        }
+
+        .form {
+            label {
+                color: colors.$light-green;
+            }
+            
+        }
+    }
+
+    .payment {
+        h3 {
+            color: colors.$light-green;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.04);
+
+            > span {
+                color: colors.$light-green;
+            }
+        }
+    }
+
+    .address {
+        .title {
+            color: colors.$light-green;
+        }
+
+        form {
+            h4 {
+                color: colors.$violet;
+            }
+
+            input {
+                color: colors.$grey;
+                border-bottom: 1px solid colors.$grey;
+            }
+
+            .actions {
+                color: colors.$light-green;
+            }
+        }
+    }
+
+    .commission {
+        color: colors.$light-green;
+
+        .title {
+            span {
+                color: colors.$violet;
+            }
+        }
+        .invite_wrapper {
+            color: colors.$violet;
+        }
+    }
+
+    .ambassador {
+        .title {
+            color: colors.$light-green;
+        }
+
+        .content {
+            color: colors.$violet;
+        }
+    }
+}
+
+.section.dark {
+    .profile {
+        .profile_header {
+            .title {
+                color: colors.$light-green;
+            }
+
+            span {
+                color: colors.$light-green;
+            }
+        }
+
+        .account_details {
+            .detail_text {
+                span.sub_title {
+                    color: colors.$light-green;
+                }
+
+                span:nth-child(2) {
+                    color: colors.$grey;
+                }
+
+                span.button_wrapper {
+                    color: colors.$light-green;
+                }
+            }
+        }
+
+        .form {
+            label {
+                color: colors.$light-green;
+            }
+
+            input[type="text"]:disabled{
+                background: #eee;
+            }
+            input.active{
+                background: #000 !important;
+            }
+        }
+    }
+
+    .payment {
+        h3 {
+            color: colors.$light-green;
+        }
+        .card {
+            background: colors.$dark-blue;
+
+            .card_details {
+                color: colors.$grey;
+            }
+
+            > span {
+                color: colors.$light-green;
+            }
+        }
+    }
+
+    .address {
+        .title {
+            color: colors.$light-green;
+        }
+
+        form {
+            h4 {
+                color: colors.$light-green;
+            }
+
+            input {
+                color: colors.$grey;
+                border-bottom: 1px solid colors.$grey;
+                background-color: transparent;
+            }
+
+            .actions {
+                color: colors.$light-green;
+            }
+        }
+    }
+
+    .commission {
+        color: colors.$light-green;
+
+        .title {
+            span {
+                color: colors.$light-green;
+            }
+        }
+
+        .card_wrapper {
+            .card {
+                border: 1px solid colors.$violet;
+                background: colors.$dark-blue;
+            }
+        }
+
+        .invite_wrapper {
+            border: 1px solid colors.$violet;
+            background: colors.$dark-blue;
+            color: colors.$light-green;
+        }
+    }
+    .ambassador {
+        .title {
+            color: colors.$light-green;
+        }
+
+        .content {
+            color: colors.$light-green;
+        }
+    }
+}
+
+.section {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .profile {
+        .profile_header {
+            margin-bottom: 2.2rem;
+            .title {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
+                font-weight: 600;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 0.85rem;
+            }
+        }
+
+        .account_details {
+            .detail_header {
+                display: flex;
+                gap: 0.85rem;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .detail_text {
+                    display: flex;
+                    flex-direction: column;
+                    span {
+                        font-size: 0.85rem;
+                    }
+
+                    span.sub_title {
+                        font-weight: 500;
+                    }
+
+                    > div {
+                        margin: 0.5rem 0 0.1rem;
+                    }
+
+                    span.button_wrapper {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                        span {
+                            cursor: pointer;
+                            font-size: 0.55rem;
+                            margin: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin: 2rem;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                label {
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    margin-bottom: 0.15rem;
+                }
+                
+                input {
+                    text-align: center;
+                    width: 90%;
+                    margin: 0 auto;
+                    padding: 0.25rem;
+                    outline: none;
+                }
+                
+                
+            }
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                border-radius: 20px;
+                background: #10c1e4;
+                padding: 0.25rem .7rem;
+                color: colors.$white;
+                gap: 0.5rem;
+                text-align: center;
+                font-weight: 600;
+                font-size: 12px;
+                .image {
+                    font-size: 15px;
+                    width: 12px;
+                }
+            }
+        }
+    }
+
+    .payment {
+        margin-bottom: 3rem;
+
+        h3 {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 0.95rem;
+        }
+
+        .card {
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 0.65rem 1rem;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 250px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+
+            .card_image {
+                width: 70px;
+            }
+
+            .card_details {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                span {
+                    font-size: 0.85rem;
+                }
+
+                .icons {
+                    align-self: flex-end;
+                    width: 30px;
+                    display: flex;
+                    gap: 0.35rem;
+                }
+            }
+
+            > span {
+                position: absolute;
+                bottom: -1rem;
+                left: 10px;
+                font-size: 0.55rem;
+            }
+        }
+    }
+
+    .address {
+        .title {
+            display: flex;
+            gap: 0.8rem;
+            flex-direction: column;
+            margin-bottom: 1.7rem;
+
+            h3 {
+                font-size: 0.95rem;
+            }
+
+            span {
+                font-size: 0.75rem;
+            }
+        }
+
+        form {
+            h4 {
+                font-size: 0.85rem;
+                font-weight: 700;
+                margin-bottom: 0.7rem;
+            }
+
+            input {
+                border: none;
+                width: 100%;
+                padding: 0.2rem;
+            }
+
+            .actions {
+                display: flex;
+                align-items: center;
+                padding: 0.25rem 1rem;
+                justify-content: space-between;
+                font-size: 0.55rem;
+
+                .icons {
+                    display: flex;
+                    width: 30px;
+                    gap: 0.35rem;
+                }
+            }
+        }
+    }
+
+    .commission {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+
+        .title {
+            h3 {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            span {
+                font-size: 0.8rem;
+            }
+        }
+
+        .card_wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 1rem;
+            justify-items: center;
+            gap: 1rem 0.5rem;
+
+            h5 {
+                grid-column: span 2;
+            }
+
+            .card {
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 0.75rem;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                text-align: center;
+                gap: 0.75rem;
+
+                span.sub_title {
+                    font-size: 0.75rem;
+                }
+
+                span.button_wrapper {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .invite_wrapper {
+            padding: 1.2rem;
+            border-radius: 10px;
+            background: rgb(208, 243, 255);
+            text-align: center;
+            font-size: 0.7rem;
+
+            button {
+                margin-top: 1rem;
+                border-radius: 5px;
+                background: colors.$gradient-bg;
+                border: 1px solid colors.$violet;
+                color: colors.$white;
+                font-size: 0.7rem;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    }
+
+    .coupon {
+        color: colors.$light-green;
+        .title {
+            margin-bottom: 1.5rem;
+
+            h3 {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            span {
+                font-size: 0.8rem;
+                opacity: 0.65;
+            }
+        }
+
+        .content {
+            text-align: center;
+
+            .tab_wrapper {
+                display: flex;
+                gap: 1rem;
+                font-size: 0.85rem;
+                justify-content: center;
+                font-weight: 600;
+
+                span {
+                    padding-bottom: 0.5rem;
+                    opacity: 0.5;
+                }
+
+                span.tab_active {
+                    border-bottom: 2px solid colors.$light-green;
+                    opacity: 1;
+                }
+            }
+
+            .tab_display {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .image {
+                    padding: 1rem;
+                    display: grid;
+                    place-items: center;
+                }
+
+                span {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+
+    .invite {
+        color: colors.$light-green;
+        max-width: 350px;
+
+        .title {
+            h3 {
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        .content {
+            h5 {
+                font-size: 0.85rem;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+
+            .code_wrapper {
+                display: grid;
+                grid-template-columns: 75% 1fr;
+                font-size: 0.75rem;
+                gap: 0.25rem;
+                margin-top: 1rem;
+
+                span {
+                    grid-column: span 2;
+                }
+
+                strong {
+                    font-weight: 500;
+                    color: colors.$grey;
+                    border: none;
+                    border-bottom: 1px solid colors.$grey;
+                    align-self: flex-end;
+                }
+
+                button {
+                    padding: 0.5rem 0.75rem;
+                    font-size: 0.5rem;
+                    display: flex;
+                    gap: 0.35rem;
+                    border-radius: 5px;
+                    border: 1px solid colors.$light-green;
+                    background-color: transparent;
+                    color: colors.$light-green;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .ambassador {
+        margin: 1.5rem auto;
+        .title {
+            h3 {
+                font-size: 0.95rem;
+                font-weight: 700;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1rem 0 3rem;
+            padding: 0 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        .card {
+            border-radius: 10px;
+            padding: 0.8rem 0.5rem 1.5rem;
+            background: colors.$gradient-bg;
+            color: colors.$white;
+
+            .progress {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.5rem;
+                font-weight: 200;
+                span {
+                    width: 33%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .slide {
+                border-radius: 99px;
+                background: colors.$white;
+                width: 95%;
+                height: 0.75rem;
+                margin: 0.5rem auto;
+                display: flex;
+                justify-content: space-between;
+
+                .circle {
+                    background-color: colors.$dark-blue;
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    border-radius: 99px;
+                }
+            }
+
+            .card_content {
+                margin: 0.75rem 0;
+                font-size: 0.6rem;
+                font-weight: 100;
+                text-align: center;
+                .input {
+                    display: flex;
+                    align-items: center;
+                    width: 90%;
+                    gap: 0.5rem;
+                    margin: 0 auto;
+                    font-size: 0.5rem;
+                }
+
+                button {
+                    margin: 1rem auto;
+                    text-align: center;
+                    display: flex;
+                    padding: 0.5rem 1rem;
+                    font-size: 0.65rem;
+                    color: colors.$violet;
+                    font-weight: 600;
+                    font-style: italic;
+                    border-radius: 5px;
+                    background-color: colors.$white;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    @include for-tablet {
+        padding: 1.5rem 1rem;
+        width: 90%;
+        margin: 0 auto;
+
+        .profile {
+            .profile_header {
+                margin-bottom: 1rem;
+            }
+
+            .account_details {
+                .detail_header {
+                    justify-content: flex-start;
+                }
+            }
+
+            .form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem 2rem;
+                margin: 2rem auto;
+                border: 1px solid colors.$grey;
+                padding: 1rem;
+                border-radius: 10px;
+
+                > div {
+                    text-align: left;
+
+                    label {
+                        margin-bottom: 0rem;
+                    }
+
+                    input {
+                        text-align: left;
+                        width: 100%;
+                        margin: 0;
+                    }
+                    
+                }
+
+                button {
+                    margin: 0 auto;
+                    justify-self: start !important;
+                    align-self: start !important;
+                    padding: 0.25rem .7rem;
+                    
+                }
+            }
+        }
+
+        .payment {
+            margin-bottom: 4rem;
+
+            h3 {
+                text-align: left;
+            }
+
+            .card {
+                margin: 0;
+                border-radius: 10px;
+                padding: 0.85rem 1rem 1rem;
+                max-width: 90%;
+                width: 300px;
+                height: 130px;
+
+                .card_details {
+                    flex-direction: row;
+                    gap: 1rem;
+
+                    span {
+                        font-size: 0.85rem;
+                    }
+
+                    .icons {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+
+        .commission {
+            gap: 1rem;
+
+            .card_wrapper {
+                max-width: 800px;
+                grid-template-columns: repeat(4, 1fr);
+                padding: 0;
+                justify-items: left;
+                gap: 1.2rem 1rem;
+
+                h5 {
+                    grid-column: span 4;
+                }
+            }
+
+            .invite_wrapper {
+                max-width: 400px;
+            }
+        }
+
+        .ambassador {
+            .card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    @include for-laptop-sm {
+        width: 85%;
+        margin-bottom: 5rem;
+
+        .profile {
+            .profile_header {
+                margin-bottom: 1.5rem;
+
+                .title {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            .account_details {
+                .detail_header {
+                    justify-content: flex-start;
+                    gap: 1.35rem;
+
+                    span.sub_title {
+                        font-weight: 600 !important;
+                    }
+                    span:nth-child(2) {
+                        margin: 0.65rem 0 0.45rem !important;
+                    }
+                }
+            }
+
+            .form {
+                gap: 1rem 2rem;
+                margin: 2rem auto !important;
+                border: 1px solid colors.$grey;
+                width: 85%;
+                padding: 2rem;
+
+                > div {
+                    text-align: left;
+
+                    label {
+                        margin-bottom: 0.75rem;
+                        font-size: 0.75rem;
+                    }
+                    
+                }
+            }
+        }
+
+        .payment {
+            margin-bottom: 4rem;
+
+            .card {
+                > span {
+                    bottom: -1.35rem;
+                    font-size: 0.6rem;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .address {
+            .title {
+                h3 {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+            }
+
+            form {
+                h4 {
+                    font-size: 0.9rem;
+                    font-style: italic;
+                    font-weight: 500;
+                }
+                .actions {
+                    font-size: 0.6rem;
+                    font-style: italic;
+                    padding: 0.75rem 1rem;
+
+                    .icons {
+                        display: flex;
+                        width: 40px;
+                        gap: 0.65rem;
+                    }
+                }
+            }
+        }
+
+        .commission {
+            gap: 1.2rem;
+
+            .title {
+                h3 {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+            }
+
+            .card_wrapper {
+                h5 {
+                    font-size: 1rem;
+                }
+            }
+
+            .invite_wrapper {
+                max-width: 400px;
+            }
+        }
+
+        .coupon {
+            .title {
+                h3 {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+
+                span {
+                    font-size: 0.95rem;
+                }
+            }
+
+            .content {
+                .tab_wrapper {
+                    font-size: 1rem;
+
+                    span {
+                        padding-bottom: 0.5rem;
+                    }
+                }
+
+                .tab_display {
+                    span {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .invite {
+            .title {
+                h3 {
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+            }
+
+            .content {
+                h5 {
+                    font-size: 1rem;
+                }
+
+                .code_wrapper {
+                    font-size: 0.85rem;
+
+                    button {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        .ambassador {
+            margin: 1.5rem 0;
+            .title {
+                h3 {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .content {
+                gap: 1.2rem;
+                margin: 1.2rem 0 3rem;
+                padding: 0 0.85rem;
+                font-size: 0.85rem;
+            }
+
+            .card {
+                padding: 1rem 0.75rem 1.75rem;
+                max-width: 700px;
+
+                .progress {
+                    font-size: 0.85rem;
+                    font-weight: 200;
+                }
+
+                .slide {
+                    border-radius: 99px;
+                    background: colors.$white;
+                    width: 90%;
+                    height: 1rem;
+                    margin: 1.1rem auto;
+
+                    .circle {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+
+                .card_content {
+                    margin: 1.75rem 0;
+                    font-size: 1rem;
+                    .input {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 0.85rem;
+                    }
+
+                    button {
+                        padding: 1rem 1.5rem;
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-desktop-md {
+        width: 85%;
+        margin-top: 3rem;
+
+        .profile {
+            .profile_header {
+                margin-bottom: 1.5rem;
+
+                .title {
+                    font-size: 1.4rem;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+
+            .account_details {
+                .detail_header {
+                    justify-content: flex-start;
+                    gap: 1.35rem;
+
+                    .image {
+                        width: 60px;
+                    }
+
+                    .detail_text {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .form {
+                gap: 1rem 2rem;
+                margin: 2rem auto !important;
+                border: 1px solid colors.$grey;
+                width: 75%;
+                max-width: 750px;
+                padding: 2rem;
+
+                > div {
+                    label {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+
+        .payment {
+            margin-bottom: 4rem;
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                width: 350px;
+                height: 150px;
+
+                .card_details {
+                    span {
+                        font-size: 0.95rem;
+                    }
+                    justify-content: space-between;
+                }
+
+                > span {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .address {
+            .title {
+                h3 {
+                    font-size: 1.4rem;
+                }
+
+                span {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                }
+            }
+
+            form {
+                h4 {
+                    font-size: 1.1rem;
+                }
+                .actions {
+                    font-size: 0.85rem;
+
+                    .icons {
+                        width: 55px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-desktop-l {
+        width: 85%;
+        margin-top: 3rem;
+
+        .profile {
+            .profile_header {
+                margin-bottom: 1.5rem;
+
+                .title {
+                    font-size: 1.4rem;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+
+            .account_details {
+                .detail_header {
+                    justify-content: flex-start;
+                    gap: 1.35rem;
+
+                    .image {
+                        width: 60px;
+                    }
+
+                    .detail_text {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .form {
+                gap: 1rem 2rem;
+                margin: 2rem auto !important;
+                border: 1px solid colors.$grey;
+                width: 75%;
+                max-width: 750px;
+                padding: 2rem;
+
+                > div {
+                    label {
+                        font-size: 0.85rem;
+                    }
+                }
+                
+            }
+        }
+
+        .payment {
+            margin-bottom: 4rem;
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                width: 350px;
+                height: 150px;
+
+                .card_details {
+                    span {
+                        font-size: 0.95rem;
+                    }
+                    justify-content: space-between;
+                }
+
+                > span {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .address {
+            .title {
+                h3 {
+                    font-size: 1.4rem;
+                }
+
+                span {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                }
+            }
+
+            form {
+                h4 {
+                    font-size: 1.1rem;
+                }
+                .actions {
+                    font-size: 0.85rem;
+
+                    .icons {
+                        width: 55px;
+                    }
+                }
+            }
+        }
+    }
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border-radius: 20px;
+    background: #10c1e4;
+    padding: 0.25rem .7rem;
+    color: colors.$white;
+    gap: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    .image {
+        font-size: 15px;
+        width: 12px;
+    }
+}

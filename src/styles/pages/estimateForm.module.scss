@@ -1,0 +1,559 @@
+@use '@/styles/colors';
+@import '@/styles/medias';
+
+.section.light {
+    .main {
+        .header {
+            color: colors.$violet;
+        }
+        .form {
+            .text_input,
+            .textarea {
+                label {
+                    color: colors.$light-green;
+                }
+            }
+            .text_input,
+            .textarea {
+                input {
+                    border: 1px solid colors.$violet;
+                    color: colors.$grey;
+                }
+            }
+            .textarea {
+                textarea {
+                    background-image: linear-gradient(to right, white 10px, transparent 10px), linear-gradient(to left, white 10px, transparent 10px),
+                        repeating-linear-gradient(white, white 16px, #ccc 16px, #ccc 15px, white 15px);
+                    color: colors.$grey;
+                }
+            }
+
+            button {
+                background: linear-gradient(to right, colors.$light-green, colors.$violet);
+                color: colors.$white;
+                border: 1px solid colors.$violet;
+            }
+        }
+    }
+
+    .footer {
+        .reward {
+            border: 2px solid colors.$light-green;
+            .image {
+                background: colors.$white;
+            }
+
+            strong {
+                color: colors.$light-green;
+            }
+
+            p {
+                color: colors.$violet;
+            }
+        }
+    }
+
+    @include for-tablet {
+        .main {
+            .header {
+                color: colors.$light-green;
+            }
+
+            .form {
+                border: 1px solid colors.$violet;
+
+                .text_input,
+                .textarea {
+                    label {
+                        color: colors.$violet;
+                    }
+                }
+
+                .text_input,
+                .textarea {
+                    input {
+                        border: none;
+                        border-bottom: 1px solid colors.$grey;
+                    }
+                }
+
+                .checkbox {
+                    label {
+                        color: colors.$violet;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            .reward {
+                border: 1px solid colors.$violet;
+                p {
+                    color: colors.$grey;
+                }
+            }
+        }
+    }
+}
+
+.section.dark {
+    .main {
+        .header {
+            color: colors.$white;
+        }
+        .form {
+            .text_input,
+            .textarea {
+                input {
+                    border: 1px solid colors.$light-green;
+                    color: colors.$white;
+                    background: transparent;
+                }
+            }
+            .textarea {
+                textarea {
+                    // TODO: Fix this
+                    background-image: linear-gradient(to right, colors.$dark-grey 10px, transparent 10px),
+                        linear-gradient(to left, colors.$dark-grey 10px, transparent 10px),
+                        repeating-linear-gradient(
+                            colors.$dark-grey,
+                            colors.$dark-grey 16px,
+                            colors.$light-green 16px,
+                            colors.$light-green 15px,
+                            colors.$dark-grey 15px
+                        );
+                    color: colors.$white;
+                }
+            }
+
+            .checkbox {
+                color: colors.$light-green;
+            }
+
+            button {
+                background: linear-gradient(to right, colors.$light-green, colors.$violet);
+                color: colors.$white;
+                border: 1px solid colors.$violet;
+            }
+
+            span {
+                color: colors.$light-green;
+            }
+        }
+    }
+
+    .footer {
+        .reward {
+            border: 2px solid colors.$dark-blue;
+            .image {
+                border-radius: 5px;
+                background: colors.$dark-blue;
+            }
+
+            p {
+                color: colors.$grey;
+            }
+        }
+    }
+
+    @include for-tablet {
+        .main {
+            .header {
+                color: colors.$light-green;
+            }
+
+            .form {
+                border: none;
+                background: colors.$dark-blue;
+
+                .text_input,
+                .textarea {
+                    label {
+                        color: colors.$light-green;
+                    }
+                }
+
+                .text_input,
+                .textarea {
+                    input {
+                        border: none;
+                        border-bottom: 1px solid colors.$grey;
+                        color: colors.$grey;
+                    }
+                }
+
+                .checkbox {
+                    label {
+                        color: colors.$light-green;
+                    }
+                }
+
+                span {
+                    color: colors.$grey;
+                }
+            }
+        }
+
+        .footer {
+            .image {
+                background: colors.$white !important;
+            }
+
+            .reward {
+                border: 1px solid colors.$violet;
+                p {
+                    color: colors.$grey;
+                }
+            }
+        }
+    }
+}
+
+.section {
+    .main {
+        padding: 0 1rem;
+
+        .header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding: 2.15rem 0;
+
+            .image {
+                width: 40%;
+                max-width: 150px;
+            }
+
+            h1 {
+                font-size: 0.9rem;
+            }
+        }
+
+        .form {
+            padding: 0.75rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 0 auto;
+            max-width: 420px;
+
+            .text_input,
+            .textarea {
+                label {
+                    color: colors.$light-green;
+                    font-weight: 700;
+                    text-align: center;
+                    font-size: 0.85rem;
+                    margin-bottom: 0.25rem;
+                }
+            }
+
+            .text_input,
+            .textarea {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                input {
+                    width: 80%;
+                    border-radius: 99px;
+                    border: 1px solid colors.$violet;
+                    padding: 0.4rem;
+                    text-align: center;
+                    color: colors.$grey;
+                }
+            }
+
+            .textarea {
+                textarea {
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    background-attachment: local;
+                    background-image: linear-gradient(to right, white 10px, transparent 10px), linear-gradient(to left, white 10px, transparent 10px),
+                        repeating-linear-gradient(white, white 16px, #ccc 16px, #ccc 15px, white 15px);
+                    line-height: 15px;
+                    padding: 0px 10px;
+                    color: colors.$grey;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .checkbox {
+                display: flex;
+                gap: 0.75rem;
+                align-items: center;
+                label {
+                    font-size: 0.65rem;
+                }
+            }
+
+            button {
+                width: 230px;
+                margin: 1.35rem auto 0.75rem;
+                outline: none;
+                border: none;
+                padding: 1.1rem 1.5rem;
+                background: linear-gradient(to right, colors.$light-green, colors.$violet);
+                border-radius: 5px;
+                font-style: italic;
+                color: colors.$white;
+                font-weight: 600;
+                font-size: 0.92rem;
+                border: 1px solid colors.$violet;
+            }
+
+            span {
+                font-size: 0.65rem;
+            }
+        }
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 0.2rem;
+        padding: 2rem 0.2rem 1rem;
+        margin: 0 auto;
+        max-width: 420px;
+
+        .reward {
+            border-radius: 10px;
+            border: 2px solid colors.$light-green;
+            padding: 1rem 0.5rem;
+            position: relative;
+
+            .image {
+                position: absolute;
+                background: colors.$white;
+                top: -25px;
+                left: 15px;
+                width: 40px;
+                border-radius: 99px;
+                display: grid;
+                padding: 5px;
+            }
+
+            strong {
+                font-weight: 600;
+                color: colors.$light-green;
+                font-size: 0.75rem;
+                display: grid;
+                place-items: center;
+            }
+
+            p {
+                margin-top: 0.5rem;
+                font-size: 0.6rem;
+                color: colors.$violet;
+                font-weight: 500;
+            }
+        }
+    }
+
+    @include for-tablet {
+        margin-top: 2rem;
+
+        .main {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            .header {
+                width: 40%;
+                gap: 1.25rem;
+                color: colors.$light-green;
+                padding: 2.15rem 0;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    width: 50%;
+                    max-width: 150px;
+                }
+
+                h1 {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .form {
+                padding: 1.25rem;
+                width: 50%;
+                margin: 0;
+                max-width: auto;
+                border: 1px solid colors.$violet;
+                border-radius: 10px;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+                .text_input,
+                .textarea {
+                    label {
+                        color: colors.$violet;
+                        text-align: left;
+                        font-size: 0.85rem;
+                        margin-bottom: 0rem;
+                        font-style: italic;
+                    }
+                }
+
+                .text_input,
+                .textarea {
+                    align-items: flex-start;
+
+                    input {
+                        width: 100%;
+                        border-radius: 0;
+                        border: none;
+                        border-bottom: 1px solid colors.$grey;
+                        text-align: left;
+                    }
+                }
+
+                .textarea {
+                    textarea {
+                        margin-top: 0.5rem;
+                        background-image: linear-gradient(to right, white 0, transparent 0), linear-gradient(to left, white 0, transparent 0),
+                            repeating-linear-gradient(white, white 18px, #ccc 18px, #ccc 20px, white 20px);
+                        line-height: 17px;
+                        height: 70px;
+                    }
+                }
+
+                .checkbox {
+                    label {
+                        color: colors.$violet;
+                        font-weight: 600;
+                    }
+                }
+
+                button {
+                    width: auto;
+                    margin: 0.8rem 0 0.35rem;
+                    padding: 0.85rem 1.5rem;
+                }
+            }
+        }
+
+        .footer {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.65rem;
+            padding: 5rem 1rem 8rem;
+            max-width: 95%;
+
+            .reward {
+                border: 1px solid colors.$violet;
+                padding: 1.75rem 0.5rem;
+
+                .image {
+                    width: 50px;
+                    padding: 10px;
+                }
+
+                strong {
+                    font-size: 0.85rem;
+                    display: block;
+                }
+
+                p {
+                    font-size: 0.65rem;
+                    color: colors.$grey;
+                }
+            }
+        }
+    }
+
+    @include for-laptop-sm {
+        .main {
+            .header {
+                width: 50%;
+                color: colors.$light-green;
+                padding: 0;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    width: 40%;
+                    max-width: 190px;
+                }
+
+                h1 {
+                    font-size: 1rem;
+                }
+            }
+
+            .form {
+                padding: 1.75rem 1.25rem;
+                width: 45%;
+                max-width: 400px;
+
+                .checkbox {
+                    label {
+                        font-size: 0.55rem;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            .reward {
+                padding: 2rem 1rem;
+
+                .image {
+                    top: -30px;
+                    width: 55px;
+                }
+
+                strong {
+                    font-size: 1rem;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @include for-desktop-md {
+        .main {
+            .header {
+                .image {
+                    max-width: 220px;
+                }
+
+                h1 {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .footer {
+            padding-top: 6rem;
+            width: 90%;
+            .reward {
+                padding: 2rem 1rem;
+
+                .image {
+                    top: -30px;
+                    width: 55px;
+                }
+
+                strong {
+                    font-size: 1.2rem;
+                }
+                p {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+
+    @include for-desktop-md {
+        .main {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .footer {
+            width: 80%;
+        }
+    }
+}

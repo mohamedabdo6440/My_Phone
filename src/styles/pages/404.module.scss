@@ -1,0 +1,43 @@
+@use '@/styles/utilities/colors';
+.container.dark {
+    h1,
+    p {
+        color: colors.$white;
+    }
+}
+
+.container {
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+
+    .image {
+        position: relative;
+        width: 50%;
+        max-width: 160px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        opacity: 0.75;
+    }
+
+    button {
+        padding: 0.65rem 1rem;
+        font-weight: 600;
+        color: colors.$white;
+        background: colors.$gradient-bg;
+        border: 1px solid colors.$violet;
+        border-radius: 5px;
+    }
+}

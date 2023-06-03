@@ -1,0 +1,53 @@
+@use '@/styles/utilities/colors';
+
+.container {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+}
+.table {
+    width: 100%;
+}
+
+.header {
+    .row {
+        background-color: colors.$very-dark-violet;
+        padding: 1rem 0;
+        color: colors.$white;
+        th {
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+    }
+}
+
+.body {
+    .row {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        padding: 0.8rem 0 !important;
+        td {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.row {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    gap: 0.25rem;
+
+    th,
+    td {
+        text-align: center;
+        min-width: 75px;
+
+        &.checkbox {
+            min-width: 30px !important;
+            max-width: 30px;
+        }
+    }
+}

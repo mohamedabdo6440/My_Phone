@@ -1,0 +1,332 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.section {
+    margin-top: -2.5rem;
+    margin-bottom: 8rem;
+
+    .title {
+        margin-top: 3rem;
+        color: colors.$light-green;
+        font-weight: 600;
+        padding: 0 1.15rem;
+        display: none;
+    }
+
+    @include for-tablet {
+        margin-top: -1.5rem;
+
+        .title {
+            display: block;
+            margin-top: 3rem;
+        }
+    }
+    @include for-desktop-md {
+        .title {
+            font-size: 1.6em;
+        }
+    }
+}
+
+.wrapper {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .detail {
+        z-index: 1;
+    }
+
+    & .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+
+        div {
+            h3 {
+                margin-bottom: 0.65rem;
+                text-transform: uppercase;
+                color: colors.$light-green;
+                font-size: 0.85rem;
+            }
+
+            .detail_wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(min(68px, 100%), 1fr));
+                gap: 0.45rem 0.35rem;
+            }
+
+            .colors {
+                gap: 0.5rem;
+                display: flex;
+                flex-wrap: wrap;
+
+                input:checked + label {
+                    border: 3px solid colors.$light-green;
+                    position: relative;
+                }
+
+                label {
+                    cursor: pointer;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 99px;
+                    border: 1px solid rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
+
+        .button {
+            outline: none;
+            border: 1px solid colors.$violet;
+            padding: 0.7rem 2rem;
+            background: colors.$gradient-bg;
+            color: colors.$white;
+            font-weight: 600;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+    }
+
+    & .form.dark {
+        .colors {
+            input:checked + label {
+                border: 3px solid colors.$white;
+            }
+        }
+    }
+
+    @include for-tablet {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 1.5rem 0;
+        min-height: 400px;
+
+        & .form {
+            margin-top: 0;
+            gap: 0.75rem;
+
+            div {
+                h3 {
+                    font-style: italic;
+                    text-transform: capitalize;
+                    margin-bottom: 0.35rem;
+                }
+            }
+            .button {
+                margin: 1rem auto 1rem 0;
+            }
+        }
+
+        & .form.light {
+            div {
+                h3 {
+                    color: colors.$violet;
+                }
+            }
+        }
+
+        & .form.dark {
+            div {
+                h3 {
+                    color: colors.$light-green;
+                }
+            }
+        }
+
+        .detail {
+            width: 320px;
+        }
+    }
+
+    @include for-laptop-sm {
+        min-height: 500px;
+
+        & .form {
+            gap: 1.5rem;
+
+            div {
+                h3 {
+                    margin-bottom: 0.75rem;
+                    font-size: 1.05rem;
+                }
+                .detail_wrapper {
+                    gap: 0.55rem 0.45rem;
+                }
+            }
+
+            .colors {
+                label {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .detail {
+            width: 400px;
+        }
+    }
+
+    @include for-desktop-md {
+        & .form {
+            div {
+                h3 {
+                    margin-bottom: 0.85rem;
+                    font-size: 1.15rem;
+                }
+            }
+
+            .colors {
+                label {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        .detail {
+            width: 380px;
+        }
+    }
+
+    @include for-desktop-l {
+        min-height: 570px;
+
+        & .form {
+            div {
+                h3 {
+                    margin-bottom: 0.9rem;
+                    font-size: 1.25rem;
+                }
+            }
+
+            .colors {
+                label {
+                    width: 54px;
+                    height: 54px;
+                }
+            }
+        }
+
+        .detail {
+            width: 450px;
+        }
+    }
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.25rem 0;
+    margin-top: 0.5rem;
+
+    > .image {
+        width: 25.5%;
+        height: 80%;
+        max-width: 100px !important;
+        align-self: flex-end;
+        z-index: 1;
+
+        .sub_title {
+            color: rgb(94, 90, 90);
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            width: 100px;
+
+            @include for-tablet {
+                font-size: 0.95rem;
+            }
+
+            @include for-desktop-md {
+                font-size: 1.15rem;
+                width: 150px;
+            }
+
+            @include for-tablet {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    h1 {
+        color: colors.$light-green;
+        font-size: 0.9rem;
+        z-index: 1;
+    }
+
+    .background {
+        position: absolute;
+        bottom: -1rem;
+        left: -135px;
+        width: 300px;
+
+        @media screen and (max-width: 320px) {
+            left: -155px;
+        }
+    }
+
+    @include for-tablet {
+        margin-top: 0rem;
+        padding-bottom: 150px;
+        width: 42%;
+        height: auto;
+        align-items: center;
+        justify-content: start;
+
+        > .image {
+            align-self: auto;
+            min-width: 150px !important;
+            z-index: 1;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        .background {
+            width: 565px;
+            bottom: 75px;
+            left: -25px;
+        }
+    }
+
+    @include for-laptop-sm {
+        > .image {
+            min-width: 175px !important;
+        }
+
+        .background {
+            width: 600px;
+        }
+    }
+
+    @include for-desktop-md {
+        width: 45%;
+        > .image {
+            min-width: 200px !important;
+        }
+
+        .background {
+            width: 700px;
+            bottom: 50px;
+        }
+    }
+
+    @include for-desktop-l {
+        width: 48%;
+        > .image {
+            min-width: 230px !important;
+            z-index: 1;
+        }
+
+        .background {
+            width: 780px;
+            left: -2.5rem;
+            bottom: 30px;
+        }
+    }
+}

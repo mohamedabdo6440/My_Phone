@@ -1,0 +1,140 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.section {
+    padding: 1.5rem 1rem 5rem;
+
+    h1 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: colors.$light-green;
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+
+    .issue_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+        .issue.dark {
+            color: colors.$light-green;
+            background: colors.$dark-blue;
+        }
+        .issue.light {
+            color: colors.$violet;
+            svg {
+                color: colors.$dark-blue;
+            }
+        }
+
+        .issue:hover {
+            border: 1px solid colors.$violet;
+        }
+
+        .issue {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+            font-size: 0.8rem;
+            cursor: pointer;
+            position: relative;
+
+            strong {
+                font-weight: 600;
+                width: 55%;
+            }
+
+            .price {
+                position: absolute;
+                right: 2.75rem;
+                font-size: 0.45rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    @include for-tablet {
+        margin: 0 auto;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .issue_wrapper {
+            grid-template-columns: repeat(3, 1fr);
+
+            .issue {
+                padding: 0.95rem 0.75rem;
+                font-size: 0.8rem;
+                border-radius: 5px;
+
+                .price {
+                    right: 2rem;
+                }
+            }
+        }
+    }
+
+    @include for-laptop-sm {
+        max-width: 90%;
+        padding: 3rem 1rem 5rem;
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .issue_wrapper {
+            .issue {
+                padding: 1.1rem 0.9rem;
+
+                .price {
+                    right: 2.2rem;
+                    font-size: 0.52rem;
+                }
+            }
+        }
+    }
+
+    @include for-desktop-md {
+        h1 {
+            text-transform: uppercase;
+            font-size: 1.3rem;
+        }
+
+        .issue_wrapper {
+            .issue {
+                font-size: 0.9rem;
+
+                .price {
+                    right: 3rem;
+                    font-size: 0.62rem;
+                }
+            }
+        }
+    }
+
+    @include for-desktop-l {
+        padding: 4rem 1rem 5rem;
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+        .issue_wrapper {
+            margin: 0 auto;
+            max-width: 1100px;
+
+            .issue {
+                padding: 1.1rem 0.9rem;
+                font-size: 1rem;
+                border-radius: 5px;
+            }
+        }
+    }
+}

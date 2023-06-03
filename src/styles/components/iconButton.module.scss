@@ -1,0 +1,39 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.button {
+    overflow: hidden;
+
+    input:checked + label {
+        border: 1px solid colors.$violet;
+    }
+
+    label {
+        display: grid;
+        place-items: center;
+        height: 32px;
+        border-radius: 7px;
+        cursor: pointer;
+        background: colors.$white;
+        padding: 0.5rem;
+    }
+
+    @include for-laptop-sm {
+        label {
+            border: 1px solid colors.$violet;
+            height: 37px;
+        }
+    }
+
+    @include for-laptop-sm {
+        input:checked + label {
+            border: 3px solid colors.$light-green;
+        }
+    }
+
+    @include for-desktop-l {
+        label {
+            height: 40px;
+        }
+    }
+}

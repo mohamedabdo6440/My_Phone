@@ -1,0 +1,134 @@
+@use "@/styles/utilities/fonts";
+@use "@/styles/utilities/colors";
+@import "@/styles/utilities/mixins";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: fonts.$body-font;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  outline: none;
+}
+
+button,
+select,
+option,
+input[type="date"] {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.container {
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  
+  @include for-tablet {
+    max-width: 800px;
+  }
+
+  @include for-laptop-sm {
+    width: 90% !important;
+    max-width: 1024px;
+  }
+
+  @include for-desktop-md {
+    width: 95% !important;
+    max-width: 1200px;
+  }
+
+  @include for-desktop-l {
+    width: 95% !important;
+    max-width: 1600px;
+  }
+}
+.buttons:hover .titleAnimate{
+display: block !important;
+}
+.buttons:hover .flowData {
+  position: absolute !important;
+  z-index: 1 !important;
+}
+.buttons:hover .sideBar{
+  justify-content: start !important;
+}
+.scrolled {
+  :nth-child(8),
+  :nth-child(9),
+  :nth-child(10),
+  :nth-child(11) {
+    opacity: 1 !important;
+  }
+}
+
+.display{
+  display: block !important;
+}
+.none{
+  display: none !important;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

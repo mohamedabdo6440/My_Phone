@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bg-black-500 {
+  background-color: rgb(0 0 0);
+}
+.bg-white-500 {
+  background-color: rgb(255 255 255);
+}
+.bg-red-500 {
+  background-color: rgb(239 68 68);
+}
+.bg-orange-500 {
+  background-color: rgb(249 115 22);
+}
+.bg-blue-500 {
+  background-color: rgb(59 130 246);
+}
+.bg-purple-500 {
+  background-color: rgb(168 85 247);
+}
+.bg-green-500 {
+  background-color: rgb(34 197 94);
+}
+.bg-gray-500 {
+  background-color: rgb(107 114 128);
+}
+.boxShadow {
+  box-shadow: -7px 7px 17px rgba(0, 1, 0, 0.4) !important;
+}
+.registerForm_container__s2QJu
+  .registerForm_form__EySSt
+  .registerForm_input_phone__tE7_B
+  select {
+  width: 100% !important;
+}
+@media screen and (max-width: 1200px) {
+  .card_wrapper {
+    padding: 52% 50% !important;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 600px) {
+  .EditWithSearch {
+    width: 500px !important;
+  }
+}
+/* || lg:top-[-11%]  || xl:top-[-24% */
+@media screen and (min-width: 1280px) and (min-height: 834px) {
+  .imgBackGround {
+    top: -24% !important;
+  }
+}
+@media screen and (max-height: 834px) and (min-width: 1280px) {
+  .imgBackGround {
+    top: -35% !important;
+  }
+}
+

@@ -1,0 +1,406 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.section.light {
+    h1 {
+        color: colors.$light-green;
+    }
+
+    .form {
+        .contact_me {
+            color: colors.$violet;
+        }
+    }
+    .footer {
+        color: colors.$violet;
+
+        button {
+            color: colors.$light-green;
+        }
+    }
+
+    @include for-tablet {
+        input::placeholder {
+            color: colors.$violet;
+        }
+    }
+}
+.section.dark {
+    h1 {
+        color: colors.$light-green;
+    }
+    .form {
+        .contact_me {
+            color: colors.$light-green;
+        }
+
+        input::placeholder {
+            color: colors.$white;
+            opacity: 0.75;
+        }
+
+        input {
+            background: colors.$dark-blue;
+            border: none !important;
+        }
+    }
+    .footer {
+        color: colors.$light-green;
+        button {
+            color: colors.$light-green;
+        }
+    }
+
+    @include for-tablet {
+        .button {
+            border: 1px solid colors.$white;
+        }
+    }
+}
+
+.section {
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+
+    h1 {
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 500px;
+
+        @media screen and (min-width: 500px) {
+            margin: 0 auto;
+        }
+
+        .input {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(min(50px, 100%), 1fr));
+            gap: 0.5rem 0.2rem;
+
+            input:nth-child(3),
+            input:nth-child(4) {
+                grid-column: span 2;
+            }
+
+            input::placeholder {
+                font-style: italic;
+                font-size: 0.75rem;
+            }
+
+            input {
+                padding: 0.65rem 0.5rem;
+                border-radius: 5px;
+                border: 1px solid colors.$violet;
+            }
+        }
+
+        .contact_me {
+            h4 {
+                font-style: italic;
+                font-weight: 400;
+                margin-bottom: 0.75rem;
+                text-align: center;
+            }
+
+            .checkbox_wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .checkbox {
+                    font-size: 0.85rem;
+                    display: flex;
+                    gap: 0.35rem;
+                }
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        gap: 0.5rem;
+        max-width: 400px;
+        margin: 0 auto;
+        > div {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h4 {
+                font-style: italic;
+                font-size: 0.85rem;
+                font-weight: 500;
+            }
+
+            > div {
+                flex: 1;
+                display: flex;
+                gap: 0.5rem;
+
+                .content {
+                    gap: 0.2rem;
+                    font-style: italic;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    font-size: 0.5rem;
+                    font-weight: 500;
+
+                    h3 {
+                        margin-top: 0.5rem;
+                        border: none;
+                        background: none;
+                        text-align: left;
+                        font-size: 0.55rem;
+                        font-style: italic;
+                        color: #10c1e4;
+                        cursor: pointer;
+                    }
+                }
+
+                .icon {
+                    position: relative;
+
+                    > span {
+                        width: 25px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .button {
+        background: colors.$gradient-bg;
+        padding: 1rem 1.5rem;
+        border: 1px solid colors.$violet;
+        color: colors.$white;
+        border-radius: 5px;
+        font-weight: 600;
+        margin: 0 auto;
+    }
+
+    .background {
+        display: none;
+    }
+
+    .loading {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.25);
+        z-index: 1;
+        top: 0;
+        left: 0;
+        display: grid;
+        place-items: center;
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        svg {
+            color: colors.$light-green;
+            animation: 1.5s spin linear infinite;
+        }
+    }
+
+    @include for-tablet {
+        gap: 3rem;
+        max-width: 80%;
+        margin: 0 auto;
+        h1 {
+            font-size: 1.5rem;
+        }
+        .form {
+            gap: 2rem;
+            max-width: 100%;
+            margin: 0;
+
+            .input {
+                gap: 1rem;
+
+                input:nth-child(3),
+                input:nth-child(4) {
+                    grid-column: span 1;
+                }
+
+                input {
+                    padding: 1rem;
+                }
+            }
+
+            .contact_me {
+                margin-left: 1.5rem;
+                font-weight: 500;
+                h4 {
+                    font-weight: 500;
+                    text-align: left;
+                }
+
+                .checkbox_wrapper {
+                    justify-content: flex-start;
+                    gap: 1.5rem;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .footer {
+            justify-content: flex-start;
+            gap: 5rem;
+            max-width: 100%;
+            margin: 0;
+
+            > div {
+                width: 240px;
+                gap: 0.65rem;
+
+                h4 {
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                }
+
+                > div {
+                    gap: 1rem;
+                    .content {
+                        gap: 0.15rem;
+                        font-size: 0.75rem;
+
+                        h3 {
+                            text-decoration: underline;
+                            font-size: 0.7rem;
+                            color: #10c1e4;
+                        }
+                    }
+
+                    .icon {
+                        position: relative;
+
+                        > span {
+                            width: 25px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .button {
+            padding: 1rem 2.5rem;
+            margin: -1rem auto 5rem;
+        }
+
+        .background {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            .image1 {
+                width: 30%;
+                position: absolute;
+                top: -5%;
+                right: -25%;
+            }
+
+            .image2 {
+                width: 25%;
+                position: absolute;
+                bottom: 10rem;
+                left: -30%;
+            }
+        }
+    }
+
+    @include for-laptop-sm {
+        gap: 4rem;
+    }
+
+    @include for-desktop-md {
+        padding: 2.5rem;
+        gap: 4.5rem;
+        max-width: 70%;
+        margin: 0 auto;
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .form {
+            gap: 2rem;
+
+            .contact_me {
+                h4 {
+                    font-size: 0.75rem;
+                }
+
+                .checkbox_wrapper {
+                    font-weight: 0.75rem;
+                }
+            }
+        }
+    }
+
+    @include for-laptop-sm {
+        h1 {
+            font-size: 2.2rem;
+        }
+        .form {
+            .input {
+                input {
+                    padding: 1.5rem 1.2rem;
+                }
+            }
+
+            .contact_me {
+                margin-left: 1.5rem;
+                font-weight: 500;
+                h4 {
+                    font-size: 1rem;
+                }
+                .checkbox_wrapper {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .footer {
+            > div {
+                gap: 0.75rem;
+
+                h4 {
+                    font-size: 1rem;
+                }
+
+                > div {
+                    .content {
+                        font-size: 0.9rem;
+
+                        h3 {
+                            font-size: 0.85rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

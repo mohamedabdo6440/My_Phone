@@ -1,0 +1,15 @@
+
+@use '@/styles/utilities/colors';
+
+.header {
+    color: colors.$green;
+    background-color: colors.$alert-bg-greem;
+    border-color: colors.$alert-bg-greem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    margin: 3rem 0;
+}

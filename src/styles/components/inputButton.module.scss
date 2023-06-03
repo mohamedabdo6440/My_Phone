@@ -1,0 +1,57 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.button.dark {
+    label {
+        background: colors.$dark-blue;
+        color: colors.$white;
+    }
+}
+
+.button.light {
+    label {
+        background: colors.$white;
+        color: colors.$dark-blue;
+    }
+}
+
+.button {
+    input:checked + label {
+        background: colors.$gradient-bg;
+        color: colors.$white;
+    }
+    label:hover{
+        background-color: colors.$light-green; 
+    }
+    label {
+        display: grid;
+        place-items: center;
+        height: 26px;
+        border-radius: 7px;
+        padding: 0 0.25rem;
+        padding: 0 0.25rem;
+        font-size: 0.55rem;
+        cursor: pointer;
+        border: 1px solid colors.$violet;
+    }
+    @media (max-width: 320px) {
+        label {
+            padding: 0 0.05rem;
+            font-size: 0.55rem;
+        }
+    }
+
+    @include for-laptop-sm {
+        label {
+            font-size: 0.71rem;
+            font-weight: 500;
+        }
+    }
+
+    @include for-desktop-l {
+        label {
+            font-size: 0.8rem;
+            height: 40px;
+        }
+    }
+}

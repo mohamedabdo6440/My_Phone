@@ -1,0 +1,328 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.container.light {
+    form {
+        .header {
+            span {
+                color: colors.$violet;
+            }
+        }
+
+        .input_wrapper {
+            label {
+                color: colors.$violet;
+            }
+
+            input {
+                border: 1px solid colors.$violet;
+            }
+        }
+    }
+
+    .order_summary {
+        border: 1px solid colors.$violet;
+        color: colors.$violet;
+    }
+}
+
+.container.dark {
+    form {
+        .header {
+            span {
+                color: colors.$light-green;
+            }
+        }
+
+        .input_wrapper {
+            label {
+                color: colors.$light-green;
+            }
+
+            input {
+                background: transparent;
+                border: 1px solid colors.$violet;
+            }
+        }
+    }
+
+    .order_summary {
+        border: 1px solid colors.$light-green;
+        color: colors.$light-green;
+    }
+}
+
+.container {
+    margin: 0;
+    border: 1px solid #5d2bdf;
+    
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        flex-direction: column;
+        align-items: center;
+        gap: 0.35rem;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+
+        .header {
+            grid-column: span 2;
+
+            span {
+                display: block;
+                text-align: center;
+                font-weight: 500;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            ul {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+
+                li {
+                    margin: 0.15rem;
+                    display: inline-block;
+                    label {
+                        width: 70px;
+                    }
+                }
+            }
+        }
+
+        .input_wrapper {
+            grid-column: span 2;
+            display: flex;
+            gap: 0.15rem;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            label {
+                font-weight: 500;
+                font-size: 0.8rem;
+            }
+
+            input {
+                width: 100%;
+                border-radius: 99px;
+                height: 25px;
+                padding: 0.5rem 1rem;
+                color: colors.$grey;
+            }
+        }
+
+        .shrink {
+            grid-column: span 1;
+        }
+
+        .button {
+            grid-column: span 2;
+            display: flex;
+            place-items: center;
+            gap: 30px;
+
+
+            button {
+                grid-column: span 2;
+                padding: 0.65rem 1.25rem;
+                border: 1px solid colors.$violet;
+                border-radius: 5px;
+                color: colors.$white;
+                font-weight: 500;
+                font-size: 0.75rem;
+                background: colors.$gradient-bg;
+                margin: 1.5rem auto 0;
+            }
+        }
+    }
+
+    .order_summary {
+        margin-top: 2.5rem;
+        padding: 1rem 10%;
+        border-radius: 10px;
+
+        .title {
+            font-size: 0.75rem;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid colors.$grey;
+            font-size: 0.75rem;
+
+            strong {
+                font-weight: 500;
+            }
+        }
+
+        .footer {
+            padding: 1rem 0 0;
+            display: flex;
+
+            .image {
+                width: 90px;
+            }
+
+            .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.5rem;
+                strong {
+                    color: colors.$light-green;
+                    font-size: 0.8rem;
+                }
+
+                > div {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    align-items: center;
+                    gap: 0.15rem 0;
+                    font-size: 0.75rem;
+
+                    .color {
+                        border-radius: 99px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-tablet {
+        max-width: 100%;
+        padding: 0rem;
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            gap: 0.35rem 1.5rem;
+
+            .header {
+                grid-column: span 2;
+            }
+
+            .input_wrapper {
+                label {
+                    align-self: flex-start;
+                }
+
+                input {
+                    width: 100%;
+                    border-radius: 0;
+                    border: none !important;
+                    height: 30px;
+                    border-bottom: 1px solid colors.$grey !important;
+                }
+            }
+        }
+
+        .order_summary {
+            max-width: 350px;
+            margin: 3rem auto 1rem;
+        }
+    }
+
+    @include for-laptop-sm {
+        form {
+            margin-top: 2rem;
+            .header {
+                grid-column: span 2;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .order_summary {
+            max-width: 400px;
+        }
+    }
+
+    @include for-desktop-md {
+        max-width: 1000px;
+
+        form {
+            gap: 0.25rem;
+
+            .header {
+                span {
+                    font-size: 1.1rem;
+                }
+
+                ul {
+                    gap: 2rem;
+
+                    li {
+                        label {
+                            width: 80px;
+                        }
+                    }
+                }
+            }
+
+            .input_wrapper {
+                width: 100%;
+                gap: 0.35rem;
+                label {
+                    font-size: 1rem;
+                }
+
+                input {
+                    height: 35px;
+                }
+            }
+
+            button {
+                font-size: 0.95rem;
+            }
+        }
+
+        .order_summary {
+            padding: 5%;
+            max-width: 450px;
+
+            .title {
+                font-size: 0.95rem;
+            }
+
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .footer {
+                padding: 1.5rem 0 0;
+                gap: 2rem;
+
+                .image {
+                    width: 120px;
+                }
+
+                .details {
+                    gap: 0.75rem;
+                    strong {
+                        color: colors.$light-green;
+                        font-size: 1rem;
+                    }
+
+                    > div {
+                        gap: 0.5rem 0;
+                        font-size: 0.95rem;
+
+                        .color {
+                            border-radius: 99px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

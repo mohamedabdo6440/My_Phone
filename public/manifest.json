@@ -1,0 +1,17 @@
+{
+    "theme_color": "#3579f6",
+    "background_color": "#ffffff",
+    "display": "myphone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "myphone",
+    "short_name": "myphone",
+    "description": "myphone",
+    "icons": [
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}

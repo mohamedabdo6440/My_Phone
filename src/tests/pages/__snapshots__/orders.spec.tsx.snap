@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type buy status all 1`] = `
+<body>
+  <div>
+    <section
+      class="undefined undefined"
+    >
+      <h2>
+        My Orders
+      </h2>
+      <div>
+        <h3
+          class="null"
+        >
+          Sell Smart
+        </h3>
+        <h3
+          class="undefined"
+        >
+          Buy Smart
+        </h3>
+        <h3
+          class="null"
+        >
+          Repair Smart
+        </h3>
+      </div>
+      <div>
+        <div>
+          <span
+            class="undefined"
+          >
+            All Orders
+          </span>
+          <span
+            class="null"
+          >
+            Pending Orders
+          </span>
+          <span
+            class="null"
+          >
+            Completed Orders
+          </span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Order Date
+              </th>
+              <th>
+                Carrier
+              </th>
+              <th>
+                Order Value
+              </th>
+              <th>
+                Order Status
+              </th>
+              <th>
+                Operation
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Wed, 01 Jan 2020 00:00:00 GMT
+              </td>
+              <td>
+                <div>
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271%27%20height=%271%27/%3e"
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Sprint"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src=""
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </td>
+              <td>
+                $
+                20
+              </td>
+              <td>
+                $
+                pending
+              </td>
+              <td>
+                <button>
+                  Details
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Wed, 01 Jan 2020 00:00:00 GMT
+              </td>
+              <td>
+                <div>
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271%27%20height=%271%27/%3e"
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Sprint"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src=""
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </td>
+              <td>
+                $
+                34
+              </td>
+              <td>
+                $
+                completed
+              </td>
+              <td>
+                <button>
+                  Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+`;
+
+exports[`type sell status pending 1`] = `
+<body>
+  <div>
+    <section
+      class="undefined undefined"
+    >
+      <h2>
+        My Orders
+      </h2>
+      <div>
+        <h3
+          class="undefined"
+        >
+          Sell Smart
+        </h3>
+        <h3
+          class="null"
+        >
+          Buy Smart
+        </h3>
+        <h3
+          class="null"
+        >
+          Repair Smart
+        </h3>
+      </div>
+      <div>
+        <div>
+          <span
+            class="null"
+          >
+            All Orders
+          </span>
+          <span
+            class="undefined"
+          >
+            Pending Orders
+          </span>
+          <span
+            class="null"
+          >
+            Completed Orders
+          </span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Order Date
+              </th>
+              <th>
+                Carrier
+              </th>
+              <th>
+                Order Value
+              </th>
+              <th>
+                Order Status
+              </th>
+              <th>
+                Operation
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Wed, 01 Jan 2020 00:00:00 GMT
+              </td>
+              <td>
+                <div>
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271%27%20height=%271%27/%3e"
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Sprint"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </td>
+              <td>
+                $
+                200
+              </td>
+              <td>
+                $
+                pending
+              </td>
+              <td>
+                <button>
+                  Details
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Wed, 01 Jan 2020 00:00:00 GMT
+              </td>
+              <td>
+                <div>
+                  <span
+                    style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                    >
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271%27%20height=%271%27/%3e"
+                        style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                      />
+                    </span>
+                    <img
+                      alt="Sprint"
+                      data-nimg="intrinsic"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </td>
+              <td>
+                $
+                2000
+              </td>
+              <td>
+                $
+                pending
+              </td>
+              <td>
+                <button>
+                  Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+`;

@@ -1,0 +1,51 @@
+@import "@/styles/utilities/colors";
+@import "@/styles/utilities/mixins";
+
+.container {
+  overflow-x: auto;
+  width: 100%;
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+.table {
+  width: 100%;
+}
+.headerText {
+  color: $violet;
+  font-size: 14px;
+}
+.textData {
+  text-align: center;
+  padding: 1rem;
+
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .action {
+    cursor: pointer;
+    &:hover {
+      background-color: $light-grey;
+      border-radius: 20px;
+      margin: 5px;
+      padding: 2px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}

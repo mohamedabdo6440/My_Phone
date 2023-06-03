@@ -1,0 +1,88 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.container.light {
+    background-color: colors.$white;
+
+    .close:hover {
+        color: #000 !important;
+    }
+}
+
+.container.dark {
+    background-color: colors.$dark-blue;
+    color: colors.$white;
+    border: 1px solid colors.$violet;
+
+    .close:hover {
+        color: colors.$violet colors.$white;
+    }
+}
+
+.container {
+    position: fixed;
+    top: 70px;
+    right: 10%;
+    z-index: 100;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+    .toast_wrapper {
+        padding: 0.35rem 1.5rem 0.35rem 0.5rem;
+
+        .toast_content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+
+            > div {
+                display: grid;
+                place-items: center;
+            }
+
+            strong {
+                font-weight: 600;
+                font-size: 0.85rem;
+            }
+
+            .close {
+                position: absolute;
+                top: 0.15rem;
+                right: 0.15rem;
+                color: colors.$grey;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    @include for-tablet {
+        top: 105px;
+
+        .toast_wrapper {
+            padding: 0.45rem 1.5rem 0.45rem 0.5rem;
+        }
+    }
+
+    @include for-desktop-md {
+        top: 115px;
+        .toast_wrapper {
+            padding: 0.65rem 1.85rem 0.65rem 0.75rem;
+
+            .toast_content {
+                strong {
+                    font-size: 1rem;
+                }
+
+                .icon {
+                    font-size: 1.35rem;
+                }
+
+                .close {
+                    top: 0.35rem;
+                    right: 0.35rem;
+                }
+            }
+        }
+    }
+}

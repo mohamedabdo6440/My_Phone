@@ -1,0 +1,88 @@
+@import "../../../utilities/colors";
+@import "../../../utilities/mixins";
+.container {
+  margin: 1rem;
+
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    color: $light-grey2;
+    h4 {
+      font-weight: 500;
+    }
+    @include for-laptop-sm() {
+      h4,
+      button {
+        margin: 0 1.5rem;
+      }
+    }
+    button {
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      border: none;
+      background-color: $light-green;
+      color: $white;
+    }
+  }
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  @include for-laptop-sm() {
+    justify-content: space-between;
+    width: 80%;
+    flex-flow: row wrap;
+    padding: 1rem 2rem;
+  }
+}
+
+.inputContainer {
+  padding: 0.7rem;
+}
+.actionsContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.searchButton {
+  background-color: $violet;
+  border: none;
+  width: fit-content;
+  padding: 0.8rem;
+  border-radius: 15px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem;
+  @include for-laptop-sm() {
+    margin: 0;
+  }
+}
+.clearButton {
+  @extend .searchButton;
+  background-color: $light-violet;
+}
+.bulkArchiveButton {
+  @extend .searchButton;
+  background-color: $pink;
+}
+.dataGridContainer {
+  padding: 1rem;
+  @include for-laptop-sm() {
+    padding: 1.2rem 2.5rem;
+  }
+}

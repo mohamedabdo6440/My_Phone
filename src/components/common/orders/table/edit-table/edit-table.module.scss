@@ -1,0 +1,99 @@
+@import "@/styles/utilities/colors";
+@import "@/styles/utilities/mixins";
+
+.container {
+  overflow-x: auto;
+  width: 100%;
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+.table {
+  width: 100%;
+}
+.header {
+  font-size: 14px;
+  font-weight: 500;
+}
+.textData {
+  text-align: center;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  input {
+    padding: 0.5rem;
+  }
+}
+
+.actionsContainer {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+.checkButton,
+.addMediaButton,
+.editButton,
+.printLabelButton,
+.checkDeviceButton {
+  background-color: $light-violet2;
+  border: none;
+  color: $white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 12px;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .action {
+    cursor: pointer;
+    &:hover {
+      background-color: $light-grey;
+      border-radius: 20px;
+      margin: 5px;
+      padding: 2px;
+    }
+  }
+}
+
+.tableHeader {
+  background-color: $light-violet2;
+  margin-left: -1rem;
+  color: $white;
+  padding: 0.5rem;
+}
+.selectContainer {
+  display: flex;
+  justify-content: center;
+}
+.select {
+  padding: 0.5rem;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+}
+
+.updateButton {
+  @extend .editButton;
+  align-self: flex-end;
+}
+.reminder {
+  color: red;
+  text-align: right;
+  margin-top: 1rem;
+}

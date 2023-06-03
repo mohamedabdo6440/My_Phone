@@ -1,0 +1,120 @@
+@use "@/styles/utilities/colors";
+@import "@/styles/utilities/mixins";
+
+.container {
+  padding: 0 1rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.card_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .card {
+    background-color: colors.$white;
+    padding: 1.25rem 0;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.75rem;
+      strong {
+        font-size: 0.9rem;
+        text-align: left;
+        color: colors.$dark-grey2;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border-radius: 15px;
+        border: none;
+        color: colors.$white;
+        background: colors.$light-green;
+        span {
+          font-weight: normal;
+        }
+        p {
+          padding: 0;
+          margin: 0;
+          font-size: 1.1rem;
+        }
+      }
+      select {
+        padding: 0.5rem;
+      }
+
+      .dateSelectContainer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        input {
+          padding: 0.5rem;
+          width: 50%;
+        }
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      /* Targets the last element to remove border */
+      div:last-child {
+        border-bottom: none;
+      }
+
+      .wrapper {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(2, 1fr);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        gap: 1rem;
+        .subtitle {
+          grid-column: span 2;
+          font-size: 0.9rem;
+          width: 100%;
+          text-align: left;
+          columns: #333333;
+        }
+        .value {
+          color: colors.$light-green;
+          text-align: left;
+          align-self: flex-start;
+          font-size: 1.5rem;
+        }
+        .icon {
+          @extend .value;
+          color: colors.$grey;
+          text-align: center;
+          font-size: 2rem;
+          font-style: none;
+        }
+      }
+    }
+  }
+
+  @include for-tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}

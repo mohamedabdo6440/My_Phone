@@ -1,0 +1,151 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.container.light {
+    .main {
+        strong {
+            color: colors.$violet;
+        }
+
+        .total {
+            span {
+                color: rgb(235, 129, 129);
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin: 1rem 0 3rem;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid colors.$grey;
+
+            strong {
+                font-weight: 500;
+                font-size: 0.95rem;
+            }
+
+            > div {
+                font-size: 0.75rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button {
+                    background: none;
+                    border: none;
+                    font-size: 0.5rem;
+                    letter-spacing: 0.5px;
+                    color: colors.$light-green;
+                }
+            }
+        }
+
+        .total {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 0.35rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid colors.$grey;
+            align-items: center;
+
+            strong {
+                font-size: 0.95rem;
+                font-weight: 500;
+            }
+
+            span {
+                font-size: 0.75rem;
+            }
+        }
+
+        .checkbox {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            font-size: 0.65rem;
+        }
+    }
+
+    .button {
+        display: block;
+        padding: 0.65rem 1.5rem;
+        color: colors.$white;
+        margin: 0 auto;
+        background: colors.$gradient-bg;
+        border: 1px solid colors.$violet;
+        border-radius: 5px;
+        font-weight: 400;
+    }
+
+    @include for-laptop-sm {
+        margin: 2rem auto;
+    }
+
+    @include for-desktop-md {
+        margin: 3rem auto 2rem;
+        .main {
+            gap: 1.1rem;
+
+            .wrapper {
+                gap: 0.65rem;
+                padding-bottom: 0.75rem;
+
+                strong {
+                    font-weight: 500;
+                    font-size: 1.05rem;
+                }
+
+                > div {
+                    font-size: 0.85rem;
+
+                    button {
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+
+            .total {
+                gap: 0.5rem;
+                padding-bottom: 0.75rem;
+
+                strong {
+                    font-size: 1.05rem;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                }
+            }
+
+            .checkbox {
+                gap: 0.5rem;
+                font-size: 0.85rem;
+
+                input {
+                    cursor: pointer;
+                }
+
+                label {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .button {
+            padding: 0.75rem 1.75rem;
+        }
+    }
+}

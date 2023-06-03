@@ -1,0 +1,167 @@
+@use '@/styles/utilities/colors';
+@import '@/styles/utilities/mixins';
+
+.stepper {
+    display: flex;
+    overflow: auto;
+    grid-auto-flow: row;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem auto;
+    padding: 0.75rem 2rem 2rem;
+    max-width: 320px;
+    cursor: pointer;
+
+    &::-webkit-scrollbar {
+        height: 5px;
+        cursor: auto;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: transparent;
+        cursor: pointer;
+        -webkit-border-radius: 1ex;
+        border-radius: 1ex;
+    }
+
+    .step {
+        z-index: 1;
+        text-align: center;
+        position: relative;
+        background: colors.$grey;
+        border-radius: 99px;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+        cursor: pointer;
+
+        .icon {
+            display: grid;
+            place-items: center;
+            color: colors.$white;
+        }
+
+        .title {
+            top: 2.5rem;
+            left: 50%;
+            width: 80px;
+            text-align: center;
+            transform: translateX(-50%);
+            position: absolute;
+            font-size: 0.5rem;
+            color: colors.$grey;
+        }
+
+        .partial {
+            display: none;
+        }
+
+        .completed {
+            position: absolute;
+            bottom: 0;
+            right: -5px;
+            background-color: colors.$green;
+            color: colors.$white;
+            border-radius: 99px;
+            width: 15px;
+            height: 15px;
+            display: grid;
+            place-items: center;
+
+            svg {
+                font-size: 0.75em;
+            }
+        }
+    }
+
+    .step.active {
+        background: colors.$gradient-bg;
+        .title {
+            color: colors.$light-green;
+        }
+    }
+
+    .divider:last-child {
+        display: none;
+    }
+
+    .divider {
+        flex: 1;
+        min-width: 25px;
+        height: 1px;
+        background: colors.$grey;
+    }
+
+    .divider.active {
+        background: colors.$gradient-bg;
+    }
+
+    :nth-child(8),
+    :nth-child(9),
+    :nth-child(10),
+    :nth-child(11) {
+        opacity: 0;
+    }
+
+    @include for-tablet {
+        gap: 0.75rem;
+        justify-content: center;
+        padding: 1rem 2rem 2rem;
+        width: 100%;
+        max-width: 100%;
+
+        :nth-child(8),
+        :nth-child(9),
+        :nth-child(10),
+        :nth-child(11) {
+            opacity: 1;
+        }
+
+        .step {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+
+            .icon {
+                font-size: 1.25rem;
+            }
+
+            .title {
+                top: 2.8rem;
+                width: 100px;
+                font-size: 0.65rem;
+            }
+        }
+
+        .divider {
+            max-width: 40px;
+            height: 2px;
+        }
+    }
+
+    @include for-laptop-sm {
+        gap: 1rem;
+        padding: 1.5rem 2rem 3.5rem;
+        .step {
+            width: 44px;
+            height: 44px;
+
+            .icon {
+                font-size: 1.5rem;
+            }
+
+            .title {
+                top: 3.75rem;
+                width: 130px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .divider {
+            max-width: 45px;
+        }
+    }
+}
